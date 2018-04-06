@@ -1,13 +1,20 @@
 extends Navigation2D
 
 # Global variables
-const SPEED = 100.0
+const SPEED = 60.0
 
 var begin = Vector2()
 var end = Vector2()
 var path = []
 
+
+onready var player = get_node("player")
+onready var playerAnim = get_node("player/AnimatedSprite")
+
+onready var clickAnim = preload("res://sceneAssets/clickAnim.tscn")
+
 func _ready():
+	#var player = get_node("player")
 	pass
 
 func _process(delta):
@@ -25,13 +32,15 @@ func _process(delta):
 				to_walk = 0
 		
 		var atpos = path[path.size() - 1]
-		$agent.position = atpos
+		player.position = atpos
 		
 		if path.size() < 2:
 			path = []
 			set_process(false)
+			playerAnim.play("idle")
 	else:
 		set_process(false)
+		playerAnim.play("idle")
 
 
 func _update_path():
@@ -44,14 +53,25 @@ func _update_path():
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		begin = $agent.position
+		begin = player.position
 		
 		#print(get_node("agent/Camera2D").get_local_mouse_position())
-		var mPos = get_node("agent/Camera2D").get_global_mouse_position()
+		var mPos = get_node("player/Camera2D").get_global_mouse_position()
+		
+		
+		playerAnim.play("walk")
+		if mPos.x < player.position.x:
+			playerAnim.flip_h  =true
+		else:
+			playerAnim.flip_h  =false
+		
+		#make click animation
+		var clickA  = clickAnim.instance()
+		add_child(clickA)
+		clickA.position = mPos
 		
 		# Mouse to local navigation coordinates
 		#print(event.position)
 		end = mPos - position
 		#end = event.position - position
-		print(end)
 		_update_path()

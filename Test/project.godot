@@ -31,4 +31,5 @@ mouse_l=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource
 quality/intended_usage/framebuffer_allocation=1
 quality/filters/use_nearest_mipmap_filter=true
 quality/filters/anisotropic_filter_level=1
+environment/default_clear_color=Color( 0.0195313, 0.0195313, 0.0195313, 1 )
 environment/default_environment="res://default_env.tres"

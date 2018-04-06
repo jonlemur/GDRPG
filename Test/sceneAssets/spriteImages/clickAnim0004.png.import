@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite-0001.png-7647bf9f8b536d839277d4b64aee9852.stex"
+path="res://.import/clickAnim0004.png-86d23120fd670f9028cc73c520b8940b.stex"
 
 [deps]
 
-source_file="res://Sprite-0001.png"
-source_md5="1549523ed6d6eae573c3061b45f336c0"
+source_file="res://sceneAssets/spriteImages/clickAnim0004.png"
+source_md5="05ea35e339176598332b4b305b8d2db3"
 
-dest_files=[ "res://.import/Sprite-0001.png-7647bf9f8b536d839277d4b64aee9852.stex" ]
-dest_md5="18db2f543d26da1ad1cade5d5449b5af"
+dest_files=[ "res://.import/clickAnim0004.png-86d23120fd670f9028cc73c520b8940b.stex" ]
+dest_md5="df27b8a4da690e253519e94d8a701b03"
 
 [params]
 
