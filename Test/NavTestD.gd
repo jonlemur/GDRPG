@@ -13,10 +13,6 @@ onready var playerAnim = get_node("player/AnimatedSprite")
 
 onready var clickAnim = preload("res://sceneAssets/clickAnim.tscn")
 
-func _ready():
-	#var player = get_node("player")
-	pass
-
 func _process(delta):
 	if path.size() > 1:
 		var to_walk = delta * SPEED
@@ -57,7 +53,6 @@ func _input(event):
 		
 		#print(get_node("agent/Camera2D").get_local_mouse_position())
 		var mPos = get_node("player/Camera2D").get_global_mouse_position()
-		
 		
 		playerAnim.play("walk")
 		if mPos.x < player.position.x:
